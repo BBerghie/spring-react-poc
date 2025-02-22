@@ -23,4 +23,7 @@
 hs_err_pid*
 replay_pid*
 
-spring-mariadb/target
+#Spring App
+contactApi/target
+contactApi/.env
+contactApi/src/main/resources/application.properties
