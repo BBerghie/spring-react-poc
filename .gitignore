@@ -27,3 +27,4 @@ replay_pid*
 contactApi/target
 contactApi/.env
 contactApi/src/main/resources/application.properties
+contactApi/.metadata/
