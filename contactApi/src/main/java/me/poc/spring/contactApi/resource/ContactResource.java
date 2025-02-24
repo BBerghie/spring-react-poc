@@ -37,7 +37,6 @@ public class ContactResource {
         return ResponseEntity.created(URI.create("/contacts/userID")).body(contactService.createContact(contact));
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping
     public ResponseEntity<Page<Contact>> getContacts(@RequestParam(value = "page", defaultValue = "0") int page,
                                                      @RequestParam(value = "size", defaultValue = "10") int size) {

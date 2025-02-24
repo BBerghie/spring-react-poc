@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 const Contact = ({ contact }) => {
-    return (
+    return (        
         <Link to={`/contacts/${contact.id}`} className="contact__item">
             <div className="contact__header">
                 <div className="contact__image">
