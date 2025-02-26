@@ -1,3 +1,13 @@
+import { useEffect, useRef, useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import Header from './component/Header'
+import ContactList from './component/ContactList'
+import { getContacts, saveContact, udpatePhoto } from './api/ContactService';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import ContactDetail from './component/ContactDetail';
+//import { toastError } from './api/ToastService';
+//import { ToastContainer } from 'react-toastify';
+
 function App() {
   const modalRef = useRef();
   const fileRef = useRef();
@@ -76,6 +86,10 @@ function App() {
 
   const toggleModal = show => show ? modalRef.current.showModal() : modalRef.current.close();
 
+  useEffect(() => {
+    getAllContacts();
+  }, []);
+
   return (
     <>
       <Header toggleModal={toggleModal} nbOfContacts={data.totalElements} />
@@ -135,7 +149,7 @@ function App() {
           </form>
         </div>
       </dialog>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </>
   )
 };

@@ -40,7 +40,7 @@ public class ContactService {
 	}
 
 	public Contact getContact(UUID id) {
-		return contactRepository.getReferenceById(id);
+		return contactRepository.findById(id).orElseThrow(() -> new RuntimeException("Contact not found"));
 	}
 
 	public Contact createContact(Contact contact) {
